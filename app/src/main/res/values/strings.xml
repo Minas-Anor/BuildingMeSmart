@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Scanner</string>
     <string name="server">http://6735f665.ngrok.io</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="error_invalid_password">invalid</string>
 </resources>
