@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Scanner</string>
+    <string name="server">http://6735f665.ngrok.io</string>
 </resources>

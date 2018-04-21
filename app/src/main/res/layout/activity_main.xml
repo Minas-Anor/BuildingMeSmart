@@ -4,9 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:gravity="center"
     tools:context="com.chahatgoel.scanner.MainActivity">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="login"
+        android:id="@+id/login"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,6 +20,8 @@
         android:fontFamily="sans-serif"
         android:textSize="45sp"
         android:onClick="scan"/>
+
+
 
 
 
