@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Scanner</string>
+    <string name="app_name">ParkMe</string>
     <string name="server">http://95bd9460.ngrok.io</string>
     <string name="server1">http://95bd9461.ngrok.io</string>
     <string name="title_activity_login">LoginActivity</string>

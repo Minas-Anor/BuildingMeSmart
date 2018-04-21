@@ -2,6 +2,7 @@ package com.chahatgoel.scanner;
 
 import android.app.ProgressDialog;
 import android.app.VoiceInteractor;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -92,6 +93,9 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         zXingScannerView.resumeCameraPreview(this);
         sendrequest(result.getText());
         zXingScannerView.stopCamera();
+        Intent i = new Intent(MainActivity.this, DisplayActivity.class);
+        startActivity(i);
+
 
 
 

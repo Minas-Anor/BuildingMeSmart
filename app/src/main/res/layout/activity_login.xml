@@ -5,24 +5,31 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+
+    android:background="#FFFF00"
     android:layout_height="match_parent"
+
     tools:context="com.chahatgoel.scanner.LoginActivity">
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
+
         android:id="@+id/etName"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="75dp"
+
+        android:layout_marginBottom="16dp"
         android:hint="Enter Name" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
+        android:inputType="numberPassword"
         android:ems="10"
+        android:layout_marginBottom="45dp"
+
         android:id="@+id/etPassword"
         android:layout_below="@+id/etName"
         android:layout_centerHorizontal="true"
@@ -33,6 +40,9 @@
         android:layout_height="wrap_content"
         android:text="Login"
         android:id="@+id/btnLogin"
+        android:background="#000000"
+        android:textColor="#FFFF00"
+        android:textSize="35sp"
         android:layout_below="@+id/etPassword"
         android:layout_alignLeft="@+id/etPassword"
         android:layout_alignStart="@+id/etPassword" />
@@ -41,6 +51,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
+        android:textColor="#FFFF00"
+        android:background="#000000"
+        android:layout_marginTop= "35dp"
+        android:textSize="35sp"
         android:id="@+id/btnRegister"
         android:layout_alignTop="@+id/btnLogin"
         android:layout_toRightOf="@+id/btnLogin"
