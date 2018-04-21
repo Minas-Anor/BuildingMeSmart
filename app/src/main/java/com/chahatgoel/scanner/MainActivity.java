@@ -43,13 +43,8 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        login = findViewById(R.id.login);
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
+        
 
 
 
@@ -96,9 +91,11 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     public void handleResult(Result result) {
 
         Toast.makeText(getApplicationContext(),result.getText(),Toast.LENGTH_SHORT).show();
-        sendrequest(result.getText());
+
 
         zXingScannerView.resumeCameraPreview(this);
+        sendrequest(result.getText());
+        zXingScannerView.stopCamera();
 
 
 
