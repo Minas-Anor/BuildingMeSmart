@@ -44,10 +44,6 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        
-
-
-
 
 
     }
@@ -56,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         requestQueue=Volley.newRequestQueue(this
 
         );
-        stringRequest= new StringRequest(Request.Method.GET,getString(R.string.server)+ "/parking/add/" + result + "/123", new Response.Listener<String>() {
+        stringRequest= new StringRequest(Request.Method.GET,getString(R.string.server)+ "/parking/add/" + result  + "/123", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 

@@ -8,6 +8,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -16,9 +17,20 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
 public class LoginActivity extends AppCompatActivity {
     EditText edtext;
     Button login;
+    public String password;
+    private RequestQueue requestQueue;
+    private StringRequest stringRequest;
+    public static final String TAG="a";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String user = etName.getText().toString();
-                String password = etPassword.getText().toString();
+                  password = etPassword.getText().toString();
                 SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
 
 
@@ -41,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString("display",userDetails);
                 editor.commit();
+                sendRequests(password);
 
 
                 Intent displayScreen= new Intent(LoginActivity.this,MainActivity.class);
@@ -58,6 +71,24 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    private void sendRequests(String password) {
+        requestQueue= Volley.newRequestQueue(this
+
+        );
+        stringRequest= new StringRequest(Request.Method.GET,getString(R.string.server1)+ "/parking/add/" + password + "/123", new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                Log.i(TAG, "onResponse: "+ response.toString());
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+        requestQueue.add(stringRequest);
+    }
 
 
 }
