@@ -11,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="login"
+        android:textSize="45sp"
+        android:background="@color/colorPrimary"
         android:id="@+id/login"/>
     <Button
         android:layout_width="match_parent"
