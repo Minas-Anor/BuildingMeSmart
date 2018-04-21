@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendrequest();
+
             }
         });
 
@@ -57,11 +57,11 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
 
     }
 
-    private void sendrequest() {
+    private void sendrequest(String result) {
         requestQueue=Volley.newRequestQueue(this
 
         );
-        stringRequest= new StringRequest(Request.Method.GET,getString(R.string.server)+ "/parking/89/31131" , new Response.Listener<String>() {
+        stringRequest= new StringRequest(Request.Method.GET,getString(R.string.server)+ "/parking/add/" + result + "/123", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
@@ -94,7 +94,9 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
 
     @Override
     public void handleResult(Result result) {
+
         Toast.makeText(getApplicationContext(),result.getText(),Toast.LENGTH_SHORT).show();
+        sendrequest(result.getText());
 
         zXingScannerView.resumeCameraPreview(this);
 
