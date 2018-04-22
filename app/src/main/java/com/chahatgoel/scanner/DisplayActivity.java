@@ -23,7 +23,7 @@ public class DisplayActivity extends AppCompatActivity {
     trial t;
     private RequestQueue requestQueue;
     private StringRequest stringRequest;
-    public static final String TAG = "a";
+    public static final String TAG = "aqq";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
