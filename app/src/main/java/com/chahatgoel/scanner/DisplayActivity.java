@@ -17,6 +17,7 @@ public class DisplayActivity extends AppCompatActivity {
         text = findViewById(R.id.text);
         setContentView(R.layout.activity_display);
 
+
         logout = findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -94,7 +94,10 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         sendrequest(result.getText());
         zXingScannerView.stopCamera();
 
+
         Intent i = new Intent(MainActivity.this, DisplayActivity.class);
+
+
         startActivity(i);
 
 

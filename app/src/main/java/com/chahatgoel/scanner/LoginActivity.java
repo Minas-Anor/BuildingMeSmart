@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                 sendRequests(password);
 
 
-                Intent displayScreen= new Intent(LoginActivity.this,MainActivity.class);
+                Intent displayScreen= new Intent(LoginActivity.this,ListActivity.class);
                 startActivity(displayScreen);
             }
         });
@@ -75,7 +75,8 @@ public class LoginActivity extends AppCompatActivity {
         requestQueue= Volley.newRequestQueue(this
 
         );
-        stringRequest= new StringRequest(Request.Method.GET,getString(R.string.server1)+ "/parking/add/" + password , new Response.Listener<String>() {
+        stringRequest= new StringRequest(Request.Method.GET,getString(R.string.server1)+
+                "/parking/add/" + password , new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
