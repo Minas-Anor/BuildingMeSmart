@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -25,6 +26,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 public class ListActivity extends AppCompatActivity {
+    public static final String TAG="a";
 
     private TextView mTextViewResult;
     private RequestQueue mQueue;
@@ -32,7 +34,7 @@ public class ListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_list);
 
         mTextViewResult = findViewById(R.id.text_view_result);
         Button buttonParse = findViewById(R.id.button_parse);
@@ -56,6 +58,7 @@ public class ListActivity extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+
                         try {
                             JSONArray jsonArray = response.getJSONArray("employees");
 
@@ -63,10 +66,10 @@ public class ListActivity extends AppCompatActivity {
                                 JSONObject employee = jsonArray.getJSONObject(i);
 
                                 String firstName = employee.getString("firstname");
-                                int age = employee.getInt("age");
+
                                 String mail = employee.getString("mail");
 
-                                mTextViewResult.append(firstName + ", " + String.valueOf(age) + ", " + mail + "\n\n");
+                                mTextViewResult.append(firstName + ", "  + ", " + mail + "\n\n");
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
