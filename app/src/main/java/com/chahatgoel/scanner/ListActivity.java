@@ -60,14 +60,14 @@ public class ListActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
 
                         try {
-                            JSONArray jsonArray = response.getJSONArray("employees");
+                            JSONArray jsonArray = response.getJSONArray("parking");
 
                             for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject employee = jsonArray.getJSONObject(i);
+                                JSONObject park = jsonArray.getJSONObject(i);
 
-                                String firstName = employee.getString("firstname");
+                                String firstName = park.getString("fill");
 
-                                String mail = employee.getString("mail");
+                                String mail = park.getString("userId");
 
                                 mTextViewResult.append(firstName + ", "  + ", " + mail + "\n\n");
                             }
