@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     Button login;
 
 
+
     private RequestQueue requestQueue;
     private StringRequest stringRequest;
     public static final String TAG="a";
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         requestQueue=Volley.newRequestQueue(this
 
         );
-        stringRequest= new StringRequest(Request.Method.GET,getString(R.string.server)+ "/parking/add/" + result  + "/123", new Response.Listener<String>() {
+        stringRequest= new StringRequest(Request.Method.GET,getString(R.string.server)+ "/parking/fill/" + result , new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
@@ -96,8 +97,6 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
 
 
         Intent i = new Intent(MainActivity.this, DisplayActivity.class);
-
-
         startActivity(i);
 
 

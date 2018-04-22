@@ -23,7 +23,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".DisplayActivity" />
-        <activity android:name=".ListActivity"></activity>
     </application>
 
 </manifest>

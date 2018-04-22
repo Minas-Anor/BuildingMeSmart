@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     private RequestQueue requestQueue;
     private StringRequest stringRequest;
     public static final String TAG="a";
+    trial t;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,9 +55,13 @@ public class LoginActivity extends AppCompatActivity {
                 editor.putString("display",userDetails);
                 editor.commit();
                 sendRequests(password);
+                t = new trial();
 
 
-                Intent displayScreen= new Intent(LoginActivity.this,ListActivity.class);
+
+                Intent displayScreen= new Intent(LoginActivity.this,MainActivity.class);
+
+
                 startActivity(displayScreen);
             }
         });
@@ -75,8 +80,8 @@ public class LoginActivity extends AppCompatActivity {
         requestQueue= Volley.newRequestQueue(this
 
         );
-        stringRequest= new StringRequest(Request.Method.GET,getString(R.string.server1)+
-                "/parking/add/" + password , new Response.Listener<String>() {
+        stringRequest= new StringRequest(Request.Method.GET,getString(R.string.server)+
+                "/parking/fill/" + password , new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
